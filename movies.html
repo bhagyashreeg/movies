@@ -1,0 +1,257 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <style>
+    body {
+      background-color: #cec6c6;
+      /* padding: 1px; */
+      font-family: Arial;
+    }
+
+    /* Center website */
+    .main {
+      max-width: 1800px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
+
+    .row {
+      margin: 60px -13px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row>.column {
+      padding: 20px;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 20%;
+      display: none;
+      /* Hide all elements by default */
+      padding: 50px -10px;
+    }
+
+    /* Clear floats after rows */
+    .row:after {    
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Content */
+
+
+    /* The "show" class is added to the filtered elements */
+    .show {
+      display: flex;
+    }
+
+    /* Style the buttons */
+    .btn {
+      border: none;
+      outline: none;
+      padding: 15px 20px;
+      background-color: rgb(180, 243, 238);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: rgb(208, 120, 243);
+    }
+
+    .btn.active {
+      background-color: #666;
+      color: rgb(142, 166, 211);
+    }
+
+    .topn {
+      background-color: rgb(32, 151, 167);
+      overflow: hidden;
+      padding: 5px 40px;
+    }
+
+    .topn button {
+      float: left;
+      display: block;
+      color: #ca1515;
+      text-align: center;
+      padding: 10px 105px;
+      text-decoration: none;
+      font-size: 17px;
+      border-radius: 40px;
+    }
+
+    /* Change the color of links on hover */
+    .topn button:hover {
+      background-color: #ddd;
+      color: rgb(202, 41, 41);
+    }
+
+    /* =================Search bar ========================*/
+    #searchbar {
+      margin-left: 15%;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .search-box {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgb(130, 185, 199);
+      height: 40px;
+      border-radius: 40px;
+      padding: 10px;
+    }
+
+    .search-txt {
+      border: none;
+      background: none;
+      outline: none;
+      float: left;
+      padding: 0;
+      color: black;
+      font-size: 16px;
+      font-style: oblique;
+      transition: 0.4s;
+      line-height: 40px;
+      width: 0px;
+      border-radius: 15px;
+      display: flex;
+    }
+
+    .search-box:hover>.search-txt {
+      width: 240px;
+      padding: 0 6px;
+    }
+
+    .search-box:hover>.search-txt {
+      background: rgb(213, 238, 241);
+    }
+
+    .search-btn {
+      color: rgb(207, 157, 90);
+      float: right;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgb(223, 221, 224);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.4s;
+    }
+
+    #h4center{
+        text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+  
+<div class="main">
+    <div class="topn" id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')"> Show all movie</button>
+      <button class="btn" onclick="filterSelection('Now_showing')"> Now showing</button>
+      <button class="btn" onclick="filterSelection('Comming_soon')"> Comming soon</button>
+      <button class="btn" onclick="filterSelection('Exclusive')"> Exclusive</button>
+    </div>
+
+    <div class="search-box">
+      <input class="search-txt" oninput="w3.filterHTML('#demo', 'li', this.value)" placeholder="Search for names..">
+
+      <a class="search-btn" href="#">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </a>
+    </div>
+    
+    <div class="row">
+      <ul id="demo">
+        <table>
+        <tr>
+            <td>
+                <div class="column Now_showing">
+                  <a href="movies.html">
+                    <li><img src="file:///C:/Users/user/Documents/Cronies/example/Family.jpg" alt="Family" class="responsive" width="400" height="600"><h4 id="h4center">Family</h4></li>
+                  </a>
+                </div>
+            </td>
+        
+            <td>
+                <div class="column Now_showing">
+                  <a href="tangled.html">
+                    <li><img src="file:///C:/Users/user/Documents/Cronies/example/Tangled.jpg" alt="Tangled" class="responsive" width="400" height="600"><h4 id="h4center">Tangled</h4></li>
+                  </a>
+                </div>
+            </td>
+    
+            <td>
+                <div class="column Comming_soon">
+                  <a href="panda.html"> 
+                    <li><img src="file:///C:/Users/user/Documents/Cronies/example/Panda.jpg" alt="Panda" class="responsive" width="400" height="600"><h4 id="h4center">Panda</h4></li>
+                  </a>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="column Comming_soon">
+                  <a href="shark.jpg"> 
+                     <li><img src="file:///C:/Users/user/Documents/Cronies/example/Shark.jpg" alt="Shark" class="responsive" width="400" height="600"><h4 id="h4center">Shark</h4></li>
+                  </a>
+                </div>
+            </td>
+        
+            <td>
+                <div class="column Exclusive">
+                  <a href="popeye.jpg"> 
+                    <li><img src="file:///C:/Users/user/Documents/Cronies/example/Popeye.jpg" alt="Popeye" class="responsive" width="400" height="600"><h4 id="h4center">Popeye</h4></li>
+                  </a>
+                </div>
+            </td>
+
+            <td>
+                <div class="column Exclusive">
+                  <a href="robinson.jpg"> 
+                    <li><img src="file:///C:/Users/user/Documents/Cronies/example/Robinson.jpg" alt="Robinson" class="responsive" width="400" height="600"><h4 id="h4center">Robinson</h4></li>
+                  </a>  
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="column Exclusive">
+                  <a href="Tom_Jerry.jpg"> 
+                    <li><img src="file:///C:/Users/user/Documents/Cronies/example/Tom_Jerry.jpg" alt="Tom_Jerry" width="400" height="600"><h4 id="h4center">Tom and Jerry</h4></li>
+                  </a>
+                </div>
+            </td>
+        </tr>
+
+        </table>
+      </ul>
+      <!-- END GRID -->
+    </div>
+    <!-- END MAIN -->
+</div>
+
+
+<script src="movie.js"></script>
+
+</body>
+
+</html>
